@@ -1,6 +1,7 @@
 import React from 'react';
 import LoginForm from '@/components/Login/LoginForm';
 import MainAppLayout from '@/components/layout/MainAppLayout';
+import { ThemeProvider } from '@/components/ThemeProvider';
 import { Toaster } from '@/components/ui/toaster';
 
 /**
@@ -10,10 +11,12 @@ import { Toaster } from '@/components/ui/toaster';
  */
 const IndexPage: React.FC = () => {
   return (
-    <MainAppLayout>
-      <LoginForm />
-      <Toaster />
-    </MainAppLayout>
+    <ThemeProvider defaultTheme="system" storageKey="ui-theme">
+      <MainAppLayout>
+        <LoginForm />
+        <Toaster />
+      </MainAppLayout>
+    </ThemeProvider>
   );
 };
 

@@ -20,6 +20,7 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { toast } from '@/components/ui/use-toast';
+import { ThemeToggle } from '../ThemeToggle';
 
 const formSchema = z.object({
   email: z.string().email({ message: 'Please enter a valid email address.' }),
@@ -55,7 +56,10 @@ export function LoginForm() {
   }
 
   return (
-    <Card className="w-96 shadow-lg">
+    <Card className="w-96 shadow-lg relative">
+      <div className="absolute top-4 right-4">
+        <ThemeToggle />
+      </div>
       <CardHeader className="items-center p-8">
         <CardTitle className="text-2xl font-bold">Welcome</CardTitle>
       </CardHeader>
